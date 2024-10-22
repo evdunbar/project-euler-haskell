@@ -1,7 +1,7 @@
 import Data.List
 
 isqrt :: Int -> Int
-isqrt = ceiling . sqrt . fromIntegral
+isqrt = floor . sqrt . fromIntegral
 
 smallestFactor :: Int -> Int
 smallestFactor x = maybe x fst (uncons (filter (\y -> mod x y == 0) [2 .. isqrt x]))
